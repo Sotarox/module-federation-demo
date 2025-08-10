@@ -34,8 +34,16 @@ module.exports = {
         remote: "remote@http://localhost:3001/remoteEntry.js",
       },
       shared: {
-        react: { singleton: true},
-        "react-dom": { singleton: true },
+        react: { 
+          singleton: true,
+          eager: false,
+          requiredVersion: "^19.1.1"
+        },
+        "react-dom": { 
+          singleton: true,
+          eager: false,
+          requiredVersion: "^19.1.1"
+        },
       },
     }),
     new HtmlWebpackPlugin({

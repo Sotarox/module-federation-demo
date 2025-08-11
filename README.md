@@ -5,9 +5,10 @@ Especially the focus is on lazy loading in React project.
 ## Tested Environment
 - node v24.2.0
 - React v19
-- webpack 5
-- babel 7
-- macOS 14.6.1
+- webpack v5
+- babel v7
+- tailwindcss v4
+- macOS v14.6.1
 
 ## Project's structure
 The structure is monorepo, which contains 2 frontends - `shell` and `remote`. `shell` is a host app which loads `remote` at runtime:

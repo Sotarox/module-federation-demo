@@ -1,24 +1,8 @@
 import React from "react";
 
 const HeroCard = () => (
-  <div
-    style={{
-      height: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      background: "linear-gradient(to bottom right, #e0e7ff, white)",
-    }}
-  >
-    <h1
-      style={{
-        fontSize: "3rem", // ca. text-5xl
-        fontWeight: "bold",
-        color: "#4338ca", // Indigo-700
-        maxWidth: "42rem", // ca. max-w-2xl
-        textAlign: "center",
-      }}
-    >
+  <div className="h-[100vh] flex items-center justify-center bg-gradient-to-br from-indigo-100 to-white">
+    <h1 className="text-5xl font-bold text-indigo-700 max-w-2xl text-center">
       Build Modular Frontends That Load When They're Needed
     </h1>
   </div>

@@ -22,6 +22,11 @@ module.exports = {
           presets: ["@babel/preset-react"],
         },
       },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
     ],
   },
   resolve: {
@@ -34,12 +39,12 @@ module.exports = {
         remote: "remote@http://localhost:3001/remoteEntry.js",
       },
       shared: {
-        react: { 
+        react: {
           singleton: true,
           eager: false,
           requiredVersion: "^19.1.1"
         },
-        "react-dom": { 
+        "react-dom": {
           singleton: true,
           eager: false,
           requiredVersion: "^19.1.1"

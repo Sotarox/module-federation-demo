@@ -1,6 +1,7 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
-const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index",
@@ -23,9 +24,12 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
-        include: path.resolve(__dirname, 'src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+        ],
       },
     ],
   },
@@ -40,6 +44,7 @@ module.exports = {
         "./HelloWorld": "./src/app/HelloWorld",
         "./UserCardList": "./src/app/UserCardList",
         "./ProductCardList": "./src/app/ProductCardList",
+        "./styles": "./src/index.css"
       },
       shared: {
         react: { 
@@ -56,6 +61,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
     }),
   ],
 };
